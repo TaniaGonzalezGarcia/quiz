@@ -3,7 +3,11 @@ var router = express.Router();
 var quizController = require('../controllers/quiz_controller');
 /* GET home page. */
 router.get('/', function(req, res) {
-  res.render('views/index.ejs', { title: 'Quiz' });
+  //es views/index.ejs o es solo index??
+  res.render('index.ejs', { title: 'Quiz' });
 });
+
+router.get('/quizes/question', quizController.question);
+router.get('/quizes/answer', quizController.answer);
 
 module.exports = router;
